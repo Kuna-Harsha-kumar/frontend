@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Box, Divider, CircularProgress, TextField, Button } from '@mui/material';
-import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 
 const CategoryExercises = () => {
   const [exercises, setExercises] = useState([]);
@@ -14,11 +14,11 @@ const CategoryExercises = () => {
 
     try {
       const url = category
-        ? `http://localhost:8080/categoryExercises?category=${category}`
-        : 'http://localhost:8080/categoryExercises';
+        ? `/categoryExercises?category=${category}`
+        : '/categoryExercises'; // Adjust URL based on category
 
-      const response = await axios.get(url);
-      setExercises(response.data['Category Exercises:'] || []);
+      const response = await axiosInstance.get(url);
+      setExercises(response.data['Category Exercises:'] || []); // Ensure exercises is always an array
       setLoading(false);
     } catch (err) {
       setError('No exercises found');

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Box, Divider, CircularProgress, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 
 const MealPrepIdeas = () => {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
 
   useEffect(() => {
     const fetchMeals = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/mealPlans');
-        setMeals(response.data['Meal Details']);
+        const response = await axiosInstance.get('/mealPlans'); // Replace with your backend endpoint
+        setMeals(response.data['Meal Details']); // Access the "Meal Details" array from the response
         setLoading(false);
       } catch (err) {
         setError('Failed to fetch meal data. Please try again later.');

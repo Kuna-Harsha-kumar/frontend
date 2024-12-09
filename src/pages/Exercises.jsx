@@ -3,6 +3,7 @@ import { Typography, Box, Divider, CircularProgress, Accordion, AccordionSummary
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import axiosInstance from '../../axiosConfig'; 
 
 const ExerciseList = () => {
   const [exercises, setExercises] = useState([]);
@@ -13,7 +14,7 @@ const ExerciseList = () => {
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/exercisedetails');
+        const response = await axiosInstance.get('/exercisedetails'); // Replace with your backend endpoint
         
         const exerciseData = response.data['Exercises:'];
         if (Array.isArray(exerciseData)) {

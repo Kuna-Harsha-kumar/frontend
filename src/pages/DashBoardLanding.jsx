@@ -30,20 +30,20 @@ const LoggedInLandingPage = () => {
         {[
           {
             title: 'WorkOut',
-            description: 'Keep your squats low and your standards high ,You dont sweat, You sparkle You work out so You can drink beer The only BS you need in your life is burpees and squats',
+            description: '“Sweat now, shine later – your gains are calling!”',
             icon: '🏋️',
-            link : 'https://www.google.com/search?q=importance+of+working+out&oq=importance+of+work&gs_lcrp=EgZjaHJvbWUqDQgAEAAYkQIYgAQYigUyDQgAEAAYkQIYgAQYigUyCQgBEEUYORiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDM1NjJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8',
+            link : '/exercises',
           },
           {
             title: 'Diet',
-            description: 'Its not a short term diet.Its a long term Lifestyle.Follow Your diet',
+            description: '“Fuel your body right, conquer every fight tomorrow!”',
             icon: '📊',
-            link :'https://www.google.com/search?q=importance+of+following+diet&sca_esv=024b198981d53257&sxsrf=ADLYWIKX_shOkV6BGjkThD6ZwZmFGYYvjQ%3A1733632918575&ei=liNVZ4nrIvPcptQPh6DXsAE&ved=0ahUKEwiJjqHyrZeKAxVzrokEHQfQFRYQ4dUDCA8&uact=5&oq=importance+of+following+diet&gs_lp=Egxnd3Mtd2l6LXNlcnAiHGltcG9ydGFuY2Ugb2YgZm9sbG93aW5nIGRpZXQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMggQABiiBBiJBTIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYogQYiQVImBBQowJYiw9wAXgBkAEAmAFqoAHEA6oBAzMuMrgBA8gBAPgBAZgCBqAC1APCAgoQABiwAxjWBBhHwgILEAAYgAQYkQIYigXCAgUQABiABMICChAAGIAEGBQYhwLCAgsQABiABBiGAxiKBZgDAOIDBRIBMSBAiAYBkAYCkgcDNC4yoAe7Jg&sclient=gws-wiz-serp',
+            link :'/free-recipe-collection',
           },
           {
             title: 'Fitness Routine',
-            description: 'The Secret of your future is hidden in your Fitness Routine.!!',
-            link:'https://www.google.com/search?q=daily+fitness+routine+benifits&sca_esv=024b198981d53257&sxsrf=ADLYWIIUddDUFXQ87veUDj2Ymo5QQCLWow%3A1733632969682&ei=ySNVZ9yhKdzbptQP9-_mgQE&ved=0ahUKEwicqtCKrpeKAxXcrYkEHfe3ORAQ4dUDCA8&uact=5&oq=daily+fitness+routine+benifits&gs_lp=Egxnd3Mtd2l6LXNlcnAiHmRhaWx5IGZpdG5lc3Mgcm91dGluZSBiZW5pZml0czIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESNIyUKkLWKUxcAh4AZABAJgBZ6AB9wiqAQQxMS4yuAEDyAEA-AEBmAIVoAKlCcICChAAGLADGNYEGEfCAgcQABiABBgNwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICBBAhGAqYAwDiAwUSATEgQIgGAZAGCJIHBDE5LjKgB6NO&sclient=gws-wiz-serp',
+            description: '“Consistency builds champions, one rep at a time!”',
+            link:'/meal-planning-Tips',
             icon: '📝',
           },
         ].map((action, index) => (
@@ -96,15 +96,15 @@ const LoggedInLandingPage = () => {
   <Grid container spacing={4}>
     {[
       {
-        quote: 'Take care of your body. It’s the only place you have to live.',
-        person: 'Jim Rohn',
+        quote: '“Success is no accident. It is hard work, perseverance, learning, and sacrifice”',
+        person: 'Pelé',
       },
       {
-        quote: 'The difference between the impossible and the possible lies in a person’s determination.',
+        quote: '“The difference between the impossible and the possible lies in a person’s determination”',
         person: 'Tommy Lasorda',
       },
       {
-        quote: 'Strength does not come from physical capacity. It comes from an indomitable will.',
+        quote: '“Strength does not come from physical capacity. It comes from an indomitable will”',
         person: 'Mahatma Gandhi',
       },
     ].map((activity, index) => (

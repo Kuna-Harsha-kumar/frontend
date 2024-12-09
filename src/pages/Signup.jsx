@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Container, Grid, TextField, Typography, Divider } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 
 const Signup = () => {
   const [firstName, setFirstName] = useState('');
@@ -17,17 +18,21 @@ const Signup = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8080/api/addUsers', {
+      const response = await axiosInstance.post('/api/addUsers', {
         firstName,
         lastName,
         email,
         password,
       });
 
+      console.log(response.data);
+
       console.log(response);
 
       if (response.data['User added '] === 'Successfully')  {
-        navigate('/login');
+        navigate('/login'); // Redirect to login page after successful signup
+      }else{
+        setError(response.data);
       }
     } catch (err) {
       setError('Failed to create an account. Please try again.');

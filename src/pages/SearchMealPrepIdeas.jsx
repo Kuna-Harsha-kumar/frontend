@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Box, Divider, CircularProgress, TextField, Button } from '@mui/material';
 import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 
 const MealPrepIdeas = () => {
   const [meals, setMeals] = useState([]);
@@ -14,11 +15,11 @@ const MealPrepIdeas = () => {
 
     try {
       const url = query
-        ? `http://localhost:8080/mealByType?mealType=${query}`
-        : 'http://localhost:8080/mealByType';
+        ? `/mealByType?mealType=${query}`
+        : '/mealByType';
 
-      const response = await axios.get(url);
-      setMeals(response.data['Meal Details'] || []);
+      const response = await axiosInstance.get(url);
+      setMeals(response.data['Meal Details'] || []); // Ensure meals is always an array
       setLoading(false);
     } catch (err) {
       setError('No meal found');

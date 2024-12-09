@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Container, Grid, TextField, Typography, Paper, Divider } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/login', {
+      const response = await axiosInstance.post('/api/login', {
         email,
         password,
       });

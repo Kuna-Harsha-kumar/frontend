@@ -3,6 +3,7 @@ import { Typography, Box, Divider, CircularProgress, Accordion, AccordionSummary
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import axiosInstance from '../../axiosConfig';
 
 const TrainerList = () => {
   const [trainers, setTrainers] = useState([]);
@@ -13,7 +14,7 @@ const TrainerList = () => {
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/getTrainerDetails');
+        const response = await axiosInstance.get('/getTrainerDetails'); // Replace with your backend endpoint
         
         const trainerData = response.data['TrainerDetails:'];
         if (Array.isArray(trainerData)) {

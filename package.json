@@ -28,6 +28,7 @@
     "react-router-dom": "^6.27.0",
     "safe-buffer": "^5.2.1",
     "send": "^1.1.0",
+    "serve": "^14.2.4",
     "util": "^0.12.5"
   },
   "devDependencies": {

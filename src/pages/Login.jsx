@@ -6,7 +6,7 @@ import axiosInstance from '../../axiosConfig';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [response, setMessage] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
   const [error, setError] = useState('');
   const [emailError, setEmailError] = useState('');
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Login = () => {
 
     setError('');
     setEmailError('');
-    setMessage('');
+    setResponseMessage('');
 
     if (!validateEmail(email)) {
       setEmailError('Please enter a valid email address.');
@@ -38,14 +38,15 @@ const Login = () => {
 
       if (response.data === 'Login Successful') {
         localStorage.setItem('authToken', response.data.token);
-        setMessage('Login Successful! Redirecting...');
+        setResponseMessage('Login Successful! Redirecting...');
         setTimeout(() => navigate('/dashboard'), 2000);
       } else {
-        setMessage(response.data);
+        // Display backend message like "Wrong Password"
+        setResponseMessage(response.data);
       }
     } catch (err) {
-      setError('Invalid email or password');
-      setMessage('');
+      setError('Error occurred during login. Please try again.');
+      setResponseMessage('');
     }
   };
 
@@ -182,6 +183,18 @@ const Login = () => {
                   }}
                 >
                   {error}
+                </Typography>
+              )}
+              {responseMessage && (
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: responseMessage === 'Login Successful' ? 'green' : 'red',
+                    textAlign: 'center',
+                    mt: 1,
+                  }}
+                >
+                  {responseMessage}
                 </Typography>
               )}
               <Button

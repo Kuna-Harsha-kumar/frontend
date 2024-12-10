@@ -37,6 +37,7 @@ const App = () => {
     '/search-by-category',
     '/search-by-exercise',
     '/nutritional-values',
+    '/trainer-list'
   ];
 
   const showAltNavbar = altNavbarRoutes.includes(location.pathname);

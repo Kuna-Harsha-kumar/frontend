@@ -40,6 +40,7 @@ const Navbar = () => {
           {[
            { label: 'Meal Planning Tips', to: '/meal-planning-tips' },
            { label: 'Exercises', to: '/exercises' },
+           { label: 'Trainers', to: '/trainer-list' },
            { label: 'Free Recipe Collection', to: '/free-recipe-collection' },
            { label: 'Meal Prep Ideas', to: '/meal-prep-ideas' }, 
            { label: 'Nutrition Values', to: '/nutritional-values' }, 

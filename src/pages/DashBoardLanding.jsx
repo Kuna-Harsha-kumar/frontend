@@ -43,7 +43,7 @@ const LoggedInLandingPage = () => {
           {
             title: 'Fitness Routine',
             description: '“Consistency builds champions, one rep at a time!”',
-            link:'/meal-planning-Tips',
+            link:'/meal-planning-tips',
             icon: '📝',
           },
         ].map((action, index) => (
